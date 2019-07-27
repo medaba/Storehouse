@@ -14,10 +14,10 @@ graph["bat"] = ["pen"]
 graph["pen"] = []
 
 
-def breadth_first_search(graph_db, key, destination):
+def breadth_first_search(graph, start, destination):
     search_queue = deque()        # создание очереди поиска
 
-    search_queue += graph_db[key] # добавление всех соседей "cab" в очередь поиска
+    search_queue += graph[start] # добавление всех соседей стартового узла в очередь поиска
 
     searched = []                 # в этот список будут добавляться уже проверенные э-ты
 
@@ -27,12 +27,12 @@ def breadth_first_search(graph_db, key, destination):
         if not point in searched:
             print(f"Проверяется узел: {point}")
             
-            if destination in graph_db[point]:
+            if destination in graph[point]:
                 print("Путь найден")
                 return True
             else:
                 # иначе все соседи добавляются в список очереди
-                search_queue += graph_db[point]
+                search_queue += graph[point]
                 searched.append(point) # добавление провереных узлов в список
             
     return False # если выполнение кода дошло до этой строки, значит ничего не найдено
