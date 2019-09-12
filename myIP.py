@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Получение информации об IP либо Домене.
 
 import requests
 from whois import whois
@@ -19,7 +20,8 @@ def get_ip():
 
 def whois_ip(ip):
     """
-    Получение информации об IP либо домене.
+    Аналог сервиса 'whois'.
+    Получение открытой информации об IP либо домене.    
     """
     w = whois(ip)
     return {"ip/domain": ip, "whois": w}
