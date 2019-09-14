@@ -22,14 +22,18 @@ def phone_number(number):
 	Принимает номер телефона (мобильный или стационар)
 	Возвращает json объект с информацией по этому номеру.
 	"""
-	number = str(number)
-	number = edit_string(number)  # Удаление из номера символов и пробелов.
-	r = requests.get(
-		f'https://htmlweb.ru/geo/api.php?json&telcod={number}'
-		)
-	return r.json()
+	try:
+		number = str(number)
+		number = edit_string(number)  # Удаление из номера символов и пробелов.
+		r = requests.get(
+			f'https://htmlweb.ru/geo/api.php?json&telcod={number}'
+			)
+		return r.json()
+	except Exception as e:
+		print(e)
+		return "Номер не найден"
 
 
 if __name__ == '__main__':
-	info = phone_number('+74993913590')
+	info = phone_number('+79603335544')
 	pprint(info)
