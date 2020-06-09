@@ -35,6 +35,6 @@ def phone_number(number):
 
 
 if __name__ == '__main__':
-	# info = phone_number('+1 (305) 555-34-65')
-	info = phone_number('+79295026401')
+	# info = phone_number('79510932323')
+	info = phone_number('+79994995750')
 	pprint(info)

@@ -19,7 +19,7 @@ def short_link(link, shortener_name="TINYURL"):
     return short_link
 
 
-def get_short_link(link):
+def relink(link):
     """
     Получение сокращенного URL через requests обращение к
     API https://rel.ink/

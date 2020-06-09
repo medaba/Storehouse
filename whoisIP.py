@@ -29,8 +29,8 @@ def whois_ip(ip):
 
 if __name__ == '__main__':
     try:
-        print(get_ip())
-        pprint(whois_ip("https://pythonanywhere.com/"))
+        my_ip = get_ip()
+        pprint(whois_ip(my_ip))
     except Exception as error:
         print("Error:", error, "\nType:", type(error))
 
