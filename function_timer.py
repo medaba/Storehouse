@@ -15,6 +15,17 @@ def func_timer(func):
 
 
 
+def func_timer2(run, coro):
+    """Вариант таймера для асинхронных функций
+
+       Пример использования:
+       func_timer2(asyncio.run, main)
+    """
+    start_time = time.time()
+    run(coro())
+    print(f"--- {time.time() - start_time} seconds ---")
+
+
 if __name__ == "__main__":
     # Пример использования
 
