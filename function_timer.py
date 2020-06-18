@@ -6,9 +6,8 @@ import time
 def func_timer(func):
     """Декоратор для вычисления времени отрабатывания принятой ф-и
     """
-    start_time = time.time()
-
     def new_func():
+        start_time = time.time()
         func()
         print(f"--- {time.time() - start_time} seconds ---")
 
